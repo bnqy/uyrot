@@ -29,6 +29,9 @@ import tut23 from './2004.01023.jpg'
 import tut25 from './2004.01025.jpg'
 import tut31 from './2004.01031.jpg'
 import appointment_img from './appointment_img.png'
+import verified_icon from './verified_icon.svg'
+import info_icon from './info_icon.svg'
+
 
 
 
@@ -40,7 +43,9 @@ export const assets = {
    arrow_icon,
    group_profiles,
    header_img,
-   appointment_img
+   appointment_img,
+   verified_icon,
+   info_icon
 }
 
 export const departmentData = [
