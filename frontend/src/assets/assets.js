@@ -28,6 +28,7 @@ import tut20 from './2004.01020.jpg'
 import tut23 from './2004.01023.jpg'
 import tut25 from './2004.01025.jpg'
 import tut31 from './2004.01031.jpg'
+import appointment_img from './appointment_img.png'
 
 
 
@@ -38,7 +39,8 @@ export const assets = {
    dropdown_icon,
    arrow_icon,
    group_profiles,
-   header_img
+   header_img,
+   appointment_img
 }
 
 export const departmentData = [
