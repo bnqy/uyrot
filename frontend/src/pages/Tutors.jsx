@@ -27,7 +27,7 @@ const Tutors = () => {
     <div>
       <p className='text-gray-600'>Студенттерди бөлүмгө жараша танда.</p>
       <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
-      <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-primary text-white' : '' }`} onClick={()=>setShowFilter(prev => !prev)}>Filter</button>
+      <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-primary text-white' : '' }`} onClick={()=>setShowFilter(prev => !prev)}>Фильтрлөө</button>
         <div className={`flex-col gap-4 text-sm text-gray-600 ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
           <p onClick={()=> department === 'Компьютер инженериясы' ? navigate('/tutors') : navigate('/tutors/Компьютер инженериясы')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${department === "Компьютер инженериясы" ? "bg-indigo-100 text-black" : ""}`}>Компьютер инженериясы</p>
           <p onClick={()=> department === 'Химия инженериясы' ? navigate('/tutors') : navigate('/tutors/Химия инженериясы')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${department === "Химия инженериясы" ? "bg-indigo-100 text-black" : ""}`}>Химия инженериясы</p>
