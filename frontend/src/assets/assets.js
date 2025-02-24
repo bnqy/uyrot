@@ -32,6 +32,7 @@ import appointment_img from './appointment_img.png'
 import verified_icon from './verified_icon.svg'
 import info_icon from './info_icon.svg'
 import about_image from './about_image.jpg'
+import contact_image from './contact_image.jpg'
 
 
 
@@ -47,7 +48,8 @@ export const assets = {
    appointment_img,
    verified_icon,
    info_icon,
-   about_image
+   about_image,
+   contact_image
 }
 
 export const departmentData = [
