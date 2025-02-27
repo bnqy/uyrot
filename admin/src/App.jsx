@@ -12,6 +12,7 @@ import TutorList from './pages/Admin/TutorList';
 import TutorAppointments from './pages/Tutor/TutorAppointments';
 import TutorDashboard from './pages/Tutor/TutorDashboard';
 import TutorProfile from './pages/Tutor/TutorProfile';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
 
