@@ -11,6 +11,7 @@ const AppContextProvider = (props) =>{
     const [tutors, setTutors] = useState([])
 
     const [token, setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : '')
+    const [userData, setUserData] = useState(false)
 
     const getTutorsData = async () => {
 
@@ -30,18 +31,47 @@ const AppContextProvider = (props) =>{
 
     }
 
-    useEffect(() => {
-        getTutorsData()
-    }, [])
+    const loadUserProfileData = async () => {
 
+        try {
+
+            const { data } = await axios.get(backendUrl + '/api/user/get-profile', { headers: { token } })
+
+            if (data.success) {
+                setUserData(data.userData)
+            } else {
+                toast.error(data.message)
+            }
+
+        } catch (error) {
+            console.log(error)
+            toast.error(error.message)
+        }
+
+    }
 
     const value = {
         tutors,
         currencySymbol,
         token,
         setToken,
-        backendUrl
+        backendUrl,
+        userData,
+        setUserData,
+        loadUserProfileData
     }
+
+    useEffect(() => {
+        getTutorsData()
+    }, [])
+
+    useEffect(() => {
+        if (token) {
+            loadUserProfileData()
+        } else{
+            setUserData(false)
+        }
+    }, [token])
 
     return (
         <AppContext.Provider value={value}>
