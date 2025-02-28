@@ -11,7 +11,7 @@ const addTutor = async (req, res) => {
       const { name, email, password, speciality, degree, experience, about, fees, address } = req.body
       const imageFile = req.file
 
-      // checking for all data to add doctor
+      // checking for all data to add tutor
       if (!name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address) {
          return res.json({ success: false, message: "Missing Details" })
      }
@@ -78,5 +78,18 @@ const loginAdmin = async (req, res) => {
    }
 }
 
+// API get all tutors
+const allTutors = async (req, res) => {
+   try {
 
-export {addTutor, loginAdmin}
+       const tutors = await tutorModel.find({}).select('-password')
+       res.json({ success: true, tutors })
+
+   } catch (error) {
+       console.log(error)
+       res.json({ success: false, message: error.message })
+   }
+}
+
+
+export {addTutor, loginAdmin, allTutors}
