@@ -3,6 +3,7 @@ import { assets } from '../assets/assets'
 import { AdminContext } from '../context/AdminContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { TutorContext } from '../context/TutorContext'
 
 const Login = () => {
 
@@ -10,6 +11,7 @@ const Login = () => {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
    const { setAToken, backendUrl } = useContext(AdminContext)
+   const { setDToken } = useContext(TutorContext)
 
    const onSubmitHandler = async (event) => {
       event.preventDefault();
@@ -25,6 +27,14 @@ const Login = () => {
         }
   
       } else {
+
+        const { data } = await axios.post(backendUrl + '/api/tutor/login', { email, password })
+      if (data.success) {
+        setDToken(data.token)
+        localStorage.setItem('dToken', data.token)
+      } else {
+        toast.error(data.message)
+      }
   
       }
   

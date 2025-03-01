@@ -13,12 +13,15 @@ import TutorAppointments from './pages/Tutor/TutorAppointments';
 import TutorDashboard from './pages/Tutor/TutorDashboard';
 import TutorProfile from './pages/Tutor/TutorProfile';
 import { Route, Routes } from 'react-router-dom';
+import { TutorContext } from './context/TutorContext';
 
 const App = () => {
 
   const { aToken } = useContext(AdminContext)
+  
+  const { dToken } = useContext(TutorContext)
 
-  return aToken ? (
+  return aToken || dToken ? (
     <div className='bg-[#F8F9FD]'>
       <ToastContainer />
       <NavBar />

@@ -46,6 +46,7 @@ import contact_image from "./contact_image.jpg";
 import menu_icon from "./menu_icon.svg";
 import cross_icon from "./cross_icon.png";
 import upload_icon from './upload_icon.png'
+import razorpay_logo from './razorpay_logo.png'
 
 
 export const assets = {
@@ -62,7 +63,8 @@ export const assets = {
   contact_image,
   menu_icon,
   cross_icon,
-  upload_icon
+  upload_icon,
+  razorpay_logo
 };
 
 export const departmentData = [
