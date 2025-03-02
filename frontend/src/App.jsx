@@ -12,6 +12,8 @@ import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChatWidget from './components/ChatWidget'
+import ChatBot from './components/ChatBot'
 
 const App = () => {
   return (
@@ -29,6 +31,7 @@ const App = () => {
         <Route path='/my-appointments' element={<MyAppointments />}/>
         <Route path='/appointment/:tutId' element={<Appointment />}/>
       </Routes>
+      <ChatBot />
       <Footer />
     </div>
   )

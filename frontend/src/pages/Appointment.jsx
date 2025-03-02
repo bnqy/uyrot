@@ -83,13 +83,13 @@ const Appointment = () => {
 
   const bookAppointment = async () => {
     if (!token) {
-      toast.warning('Login to book appointment');
+      toast.warning('Жолугушуу үчүн кириңиз');
       return navigate('/login');
     }
 
     // If there are no tutSlots or it’s empty, guard
     if (!tutSlots[slotIndex] || tutSlots[slotIndex].length === 0) {
-      toast.error('No slot selected');
+      toast.error('Тандалган жок');
       return;
     }
 

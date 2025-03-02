@@ -1,7 +1,11 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className='text-center text-2xl pt-10 text-gray-500'>
@@ -20,7 +24,14 @@ const Contact = () => {
               <p className='text-gray-500'>Тел. : +996 312938312(3234) <br />Email: uyrot.bilgi@manas.edu.kg</p> 
               <p className='font-semibold text-lg text-gray-600 '>Üyröt менен Чогуу Өнүк </p>
               <p className='text-gray-500'>Өзүңдүн билимиңди башкалар менен бөлүш.</p>
-              <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Сабак бер</button>
+              <a 
+  href="http://localhost:5174/login" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500"
+>
+  Сабак бер
+</a>
             </div>
 
         </div>

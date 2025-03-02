@@ -12,10 +12,10 @@ const About = () => {
       <div className='my-10 flex flex-col md:flex-row gap-12'>
         <img className='w-full md:max-w-[360px]' src={assets.about_image} alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores culpa, repellat debitis cum minus neque animi excepturi voluptatum amet laborum?</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur inventore sequi ipsa repellendus accusantium, exercitationem dolore nemo quas, laboriosam illo qui. Qui provident fugit porro.</p>
+          <p>Биз – студенттерге сапаттуу билим алуу мүмкүнчүлүгүн сунуштаган инновациялык онлайн платформабыз. Биздин максат – ар бир окуучуга өзүнө ылайыктуу мугалимди табууга жардам берүү жана билимди жеткиликтүү кылуу.</p>
+          <p>Биздин платформа аркылуу каалаган предмет боюнча квалификациялуу окутуучулар менен жеке сабактарды брондоп, билимиңизди өркүндөтө аласыз.</p>
           <b className='text-gray-800'>Биздин Максатыбыз</b>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, molestias! Explicabo, ipsam rem. Aperiam molestias numquam voluptas magni aspernatur itaque fugit nisi ad ipsum veritatis.</p>
+          <p>Биздин негизги максатыбыз – билим берүүнү заманбап, ыңгайлуу жана ар бир студентке жеткиликтүү кылуу. Биз студенттер менен тажрыйбалуу мугалимдердин ортосундагы байланышты күчөтүп, сапаттуу билим алуу процессин жеңилдетүүгө аракет кылабыз.</p>
         </div>
       </div>
 
@@ -26,17 +26,17 @@ const About = () => {
       <div className='flex flex-col md:flex-row mb-20'>
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
           <b>Эффективдүүлүк:</b>
-          <p>Сиздин бош эмес жашоо образыңызга туура келген жөнөкөйлөштүрүлгөн жолугушуу графиги.</p>
+          <p>Сиздин жашооңузга ыңгайлуу жолугушуу графиги. Математикадан баштап тил курстарына чейин кеңири тандоо.</p>
         </div>
 
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
           <b>Ыңгайлуу:</b>
-          <p>Тармагыңыздагы ишенимдүү адистердин тармагына кирүү.</p>
+          <p>Тармагыңыздагы ишенимдүү адистердин тармагына кирүү. Сабактарды өз убактыңызга жараша пландаштырыңыз.</p>
         </div>
 
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
           <b>Жеткиликтүү:</b>
-          <p>Концентриңизди сактоого жардам берүү үчүн ылайыкташтырылган сунуштар жана эскертүүлөр.</p>
+          <p>Окутуучуларды оңой тандап, онлайн же оффлайн сабактарды эффективдүү жана ыңгайлуу брондоңуз.</p>
         </div>
       </div>
 
