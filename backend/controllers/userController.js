@@ -20,14 +20,14 @@ const registerUser = async (req, res) => {
 
     // checking for all data to register user
     if (!name || !email || !password) {
-      return res.json({ success: false, message: "Missing Details" });
+      return res.json({ success: false, message: "Билгилер жетишсиз" });
     }
 
     // validating email format
     if (!validator.isEmail(email)) {
       return res.json({
         success: false,
-        message: "Please enter a valid email",
+        message: "Туура email киргизиңиз",
       });
     }
 
@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
     if (password.length < 8) {
       return res.json({
         success: false,
-        message: "Please enter a strong password",
+        message: "Күчтүү сыр сөз жазыңыз",
       });
     }
 
@@ -66,7 +66,7 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.json({ success: false, message: "User does not exist" });
+      return res.json({ success: false, message: "Колдонуучу табылган жок" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -75,7 +75,7 @@ const loginUser = async (req, res) => {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: "Invalid credentials" });
+      res.json({ success: false, message: "Кирүүдө ката бар" });
     }
   } catch (error) {
     console.log(error);
@@ -101,7 +101,7 @@ const updateProfile = async (req, res) => {
     const imageFile = req.file;
 
     if (!name || !phone || !dob || !gender) {
-      return res.json({ success: false, message: "Data Missing" });
+      return res.json({ success: false, message: "Билгилер жетишсиз" });
     }
 
     await userModel.findByIdAndUpdate(userId, {
@@ -122,7 +122,7 @@ const updateProfile = async (req, res) => {
       await userModel.findByIdAndUpdate(userId, { image: imageURL });
     }
 
-    res.json({ success: true, message: "Profile Updated" });
+    res.json({ success: true, message: "Профиль өзгөртүлдү" });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: error.message });
@@ -135,7 +135,7 @@ const bookAppointment = async (req, res) => {
     const tutData = await tutorModel.findById(tutId).select("-password");
 
     if (!tutData.available) {
-      return res.json({ success: false, message: "Tutor Not Available" });
+      return res.json({ success: false, message: "Окутуучу жеткиликтүү эмес" });
     }
 
     let slots_booked = tutData.slots_booked;
@@ -143,7 +143,7 @@ const bookAppointment = async (req, res) => {
     // checking for slot availablity
     if (slots_booked[slotDate]) {
       if (slots_booked[slotDate].includes(slotTime)) {
-        return res.json({ success: false, message: "Slot Not Available" });
+        return res.json({ success: false, message: "Убакыт жеткиликтүү эмес" });
       } else {
         slots_booked[slotDate].push(slotTime);
       }
@@ -173,7 +173,7 @@ const bookAppointment = async (req, res) => {
     // save new slots data in tutData
     await tutorModel.findByIdAndUpdate(tutId, { slots_booked });
 
-    res.json({ success: true, message: "Appointment Booked" });
+    res.json({ success: true, message: "Жолугушуу катталды" });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: error.message });
@@ -201,7 +201,7 @@ const cancelAppointment = async (req, res) => {
 
       // verify appointment user 
       if (appointmentData.userId !== userId) {
-          return res.json({ success: false, message: 'Unauthorized action' })
+          return res.json({ success: false, message: 'Жеткиликтүү эмес' })
       }
 
       await appointmentModel.findByIdAndUpdate(appointmentId, { cancelled: true })
@@ -217,7 +217,7 @@ const cancelAppointment = async (req, res) => {
 
       await tutorModel.findByIdAndUpdate(tutId, { slots_booked })
 
-      res.json({ success: true, message: 'Appointment Cancelled' })
+      res.json({ success: true, message: 'Жолугушуу өчүрүлдү' })
 
   } catch (error) {
       console.log(error)
@@ -233,7 +233,7 @@ const paymentRazorpay = async (req, res) => {
       const appointmentData = await appointmentModel.findById(appointmentId)
 
       if (!appointmentData || appointmentData.cancelled) {
-          return res.json({ success: false, message: 'Appointment Cancelled or not found' })
+          return res.json({ success: false, message: 'Жолугушуу өчүрүлгөн' })
       }
 
       // creating options for razorpay payment
@@ -260,12 +260,12 @@ const verifyRazorpay = async (req, res) => {
       const { razorpay_order_id } = req.body
       const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
 
-      if (orderInfo.status === 'paid') {
+      if (orderInfo.status === 'төлөндү') {
           await appointmentModel.findByIdAndUpdate(orderInfo.receipt, { payment: true })
-          res.json({ success: true, message: "Payment Successful" })
+          res.json({ success: true, message: "Төлөм ийгиликтүү" })
       }
       else {
-          res.json({ success: false, message: 'Payment Failed' })
+          res.json({ success: false, message: 'Төлөм ийгиликсиз' })
       }
   } catch (error) {
       console.log(error)

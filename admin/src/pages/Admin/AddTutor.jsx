@@ -73,7 +73,7 @@ const AddTutor = () => {
 
   return (
     <form onSubmit={onSubmitHandler} className="m-5 w-full">
-      <p className="mb-3 text-lg font-medium">Окутуучу кош</p>
+      <p className="mb-3 text-lg font-medium">Окутуучу кошуу</p>
       <div className="bg-white px-8 py-8 border rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll">
         <div className="flex items-center gap-4 mb-8 text-gray-500">
           <label htmlFor="tut-img">
@@ -81,7 +81,7 @@ const AddTutor = () => {
           </label>
           <input onChange={(e) => setTutImg(e.target.files[0])} type="file" id="tut-img" hidden />
           <p>
-            Окутуучунун <br /> сүрөтүн жүктө
+            Окутуучунун <br /> сүрөтүн жүктөө
           </p>
         </div>
 
@@ -89,37 +89,37 @@ const AddTutor = () => {
           <div className="w-full lg:flex-1 flex flex-col gap-4">
             <div className="flex-1 flex flex-col gap-1">
               <p>Аты жөнү</p>
-              <input onChange={e => setName(e.target.value)} value={name} className="border rounded px-3 py-2" type="text" placeholder="Name" required />
+              <input onChange={e => setName(e.target.value)} value={name} className="border rounded px-3 py-2" type="text" placeholder="Камчыбек Ташиев" required />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Email</p>
-              <input onChange={e => setEmail(e.target.value)} value={email} className="border rounded px-3 py-2" type="email" placeholder="Email" required />
+              <input onChange={e => setEmail(e.target.value)} value={email} className="border rounded px-3 py-2" type="email" placeholder="kamchybek.tashiev@manas.edu.kg" required />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Сыр сөзү</p>
-              <input onChange={e => setPassword(e.target.value)} value={password} className="border rounded px-3 py-2" type="password" placeholder="Password" required />
+              <input onChange={e => setPassword(e.target.value)} value={password} className="border rounded px-3 py-2" type="password" placeholder="Сыр сөз" required />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Тажырыйбасы</p>
               <select onChange={e => setExperience(e.target.value)} value={experience} name="" id="" className="border rounded px-2 py-2">
-                <option value="1 Year">1 жыл</option>
-                <option value="2 Year">2 жыл</option>
-                <option value="3 Year">3 жыл</option>
-                <option value="4 Year">4 жыл</option>
-                <option value="5 Year">5 жыл</option>
-                <option value="6 Year">6 жыл</option>
-                <option value="8 Year">8 жыл</option>
-                <option value="9 Year">9 жыл</option>
-                <option value="10 Year">10 жыл</option>
+                <option value="1 жыл">1 жыл</option>
+                <option value="2 жыл">2 жыл</option>
+                <option value="3 жыл">3 жыл</option>
+                <option value="4 жыл">4 жыл</option>
+                <option value="5 жыл">5 жыл</option>
+                <option value="6 жыл">6 жыл</option>
+                <option value="8 жыл">8 жыл</option>
+                <option value="9 жыл">9 жыл</option>
+                <option value="10 жыл">10 жыл</option>
               </select>
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Баасы</p>
-              <input onChange={e => setFees(e.target.value)} value={fees} className="border rounded px-3 py-2" type="number" placeholder="fees" required />
+              <input onChange={e => setFees(e.target.value)} value={fees} className="border rounded px-3 py-2" type="number" placeholder="Баасы:  450" required />
             </div>
           </div>
 
@@ -138,21 +138,21 @@ const AddTutor = () => {
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
-              <p>Билими</p>
-              <input onChange={e => setDegree(e.target.value)} value={degree} type="text" placeholder="Education" className="border rounded px-3 py-2" required />
+              <p>Орталамасы</p>
+              <input onChange={e => setDegree(e.target.value)} value={degree} type="text" placeholder="3.99 GPA" className="border rounded px-3 py-2" required />
             </div>
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Дареги</p>
-              <input onChange={e => setAddress1(e.target.value)} value={address1} type="text" className="border rounded px-3 py-2" placeholder="address 1" required />
-              <input onChange={e => setAddress2(e.target.value)} value={address2} type="text" className="border rounded px-3 py-2" placeholder="address 2" required />
+              <input onChange={e => setAddress1(e.target.value)} value={address1} type="text" className="border rounded px-3 py-2" placeholder="Zoom, Google Meet" required />
+              <input onChange={e => setAddress2(e.target.value)} value={address2} type="text" className="border rounded px-3 py-2" placeholder="525 MFFB" required />
             </div>
           </div>
         </div>
 
         <div className="mt-4 mb-2">
-          <p className="mt-4 mb-2">Окутуучу Жөнүндө</p>
-          <textarea onChange={e => setAbout(e.target.value)} value={about} placeholder="About" className="w-full px-4 pt-2 border rounded" rows={5} required />
+          <p className="mt-4 mb-2">Окутуучу жөнүндө</p>
+          <textarea onChange={e => setAbout(e.target.value)} value={about} placeholder="Окутуучу жөнүндө кыскача маалымат" className="w-full px-4 pt-2 border rounded" rows={5} required />
         </div>
 
         <button type="submit" className="bg-primary px-10 py-3 mt-4 text-white rounded-full">Тизмеге кош</button>

@@ -15,17 +15,17 @@ const addTutor = async (req, res) => {
 
       // checking for all data to add tutor
       if (!name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address) {
-         return res.json({ success: false, message: "Missing Details" })
+         return res.json({ success: false, message: "Билгилер жетишсиз" })
      }
 
      // validating email format
      if (!validator.isEmail(email)) {
-      return res.json({ success: false, message: "Please enter a valid email" })
+      return res.json({ success: false, message: "Туура email киргизиңиз" })
    }
 
    // validating strong password
    if (password.length < 8) {
-      return res.json({ success: false, message: "Please enter a strong password" })
+      return res.json({ success: false, message: "Күчтүү сыр сөз жазыңыз" })
   }
 
   // hashing user password
@@ -53,7 +53,7 @@ const addTutor = async (req, res) => {
 const newTutor = new tutorModel(tutorData)
 await newTutor.save()
 
-res.json({ success: true, message: 'Tutor Added' })
+res.json({ success: true, message: 'Окутуучу кошулду' })
    }
    catch (error){
       console.log(error)
@@ -71,7 +71,7 @@ const loginAdmin = async (req, res) => {
          const token = jwt.sign(email+password, process.env.JWT_SECRET)
          res.json({ success: true, token })
      } else {
-         res.json({ success: false, message: "Invalid credentials" })
+         res.json({ success: false, message: "Кирүүдө ката бар" })
      }
 
    } catch (error) {
@@ -112,7 +112,7 @@ const appointmentCancel = async (req, res) => {
        const { appointmentId } = req.body
        await appointmentModel.findByIdAndUpdate(appointmentId, { cancelled: true })
 
-       res.json({ success: true, message: 'Appointment Cancelled' })
+       res.json({ success: true, message: 'Жолугушуу өчүрүлдү' })
 
    } catch (error) {
        console.log(error)

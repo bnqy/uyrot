@@ -85,11 +85,11 @@ export const departmentData = [
     image: Spor,
   },
   {
-    speciality: "Радио, телевидение",
+    speciality: "Радио & телевидение",
     image: Radio,
   },
   {
-    speciality: "Финансы жана кредит",
+    speciality: "Финансы & кредит",
     image: Eco,
   },
   {

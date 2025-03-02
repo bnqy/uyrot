@@ -41,7 +41,7 @@ const loginTutor = async (req, res) => {
         const user = await tutorModel.findOne({ email })
 
         if (!user) {
-            return res.json({ success: false, message: "Invalid credentials" })
+            return res.json({ success: false, message: "Кирүүдө ката бар" })
         }
 
         const isMatch = await bcrypt.compare(password, user.password)
@@ -50,7 +50,7 @@ const loginTutor = async (req, res) => {
             const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
             res.json({ success: true, token })
         } else {
-            res.json({ success: false, message: "Invalid credentials" })
+            res.json({ success: false, message: "Кирүүдө ката бар" })
         }
 
 
@@ -83,10 +83,10 @@ const appointmentComplete = async (req, res) => {
         const appointmentData = await appointmentModel.findById(appointmentId)
         if (appointmentData && appointmentData.tutId === tutId) {
             await appointmentModel.findByIdAndUpdate(appointmentId, { isCompleted: true })
-            return res.json({ success: true, message: 'Appointment Completed' })
+            return res.json({ success: true, message: 'Жолугушуу аяктады' })
         }
 
-        res.json({ success: false, message: 'Appointment Cancelled' })
+        res.json({ success: false, message: 'Жолугушуу аяктады' })
 
     } catch (error) {
         console.log(error)
@@ -103,10 +103,10 @@ const appointmentCancel = async (req, res) => {
         const appointmentData = await appointmentModel.findById(appointmentId)
         if (appointmentData && appointmentData.tutId === tutId) {
             await appointmentModel.findByIdAndUpdate(appointmentId, { cancelled: true })
-            return res.json({ success: true, message: 'Appointment Cancelled' })
+            return res.json({ success: true, message: 'Жолугушуу өчүрүлдү' })
         }
 
-        res.json({ success: false, message: 'Appointment Cancelled' })
+        res.json({ success: false, message: 'Жолугушуу өчүрүлдү' })
 
     } catch (error) {
         console.log(error)
@@ -177,7 +177,7 @@ const updateTutorProfile = async (req, res) => {
 
         await tutorModel.findByIdAndUpdate(tutId, { fees, address, available })
 
-        res.json({ success: true, message: 'Profile Updated' })
+        res.json({ success: true, message: 'Профиль өзгөртүлдү' })
 
     } catch (error) {
         console.log(error)

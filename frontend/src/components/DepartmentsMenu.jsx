@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const DepartmentsMenu = () => {
   return (
     <div className='flex flex-col items-center gap-4 py-16 text-gray-800' id='department'>
-      <h1 className='text-3xl font-medium'>Бөлүмдөр Аркылуу Танда</h1>
+      <h1 className='text-3xl font-medium'>Өзүңдүн бөлүмүңө жараша танда</h1>
       <p className='sm:w-1/2 text-center text-sm'>Өзүңдүн бөлүмө жараша танда жана өзүңдүн келечиңе карай кадам ташта. Өзүңдүн бөлүмө жараша танда жана өзүңдүн келечиңе карай кадам ташта</p>
       <div className='flex sm:justify-center gap-4 pt-5 w-full overflow-scroll'>
       {departmentData.map((item,index)=>(
