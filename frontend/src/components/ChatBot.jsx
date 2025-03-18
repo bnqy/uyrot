@@ -117,10 +117,17 @@ function ChatBot() {
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-all duration-300 flex items-center justify-center"
+          className="relative w-20 h-20 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center border-4 border-dashed border-blue-400"
           aria-label="Open chat assistant"
         >
-          <MessageCircle size={24} />
+          {/* <MessageCircle size={24} /> */}
+          <video
+            src="https://euler-storage.web.app/assets/chat-c4537780.mp4" // ✅ Change to your video URL
+            autoPlay
+            loop
+            muted
+            className="w h object-cover rounded-full"
+          />
         </button>
       )}
 

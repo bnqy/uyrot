@@ -30,6 +30,8 @@ const App = () => {
         <Route path='/my-profile' element={<MyProfile />}/>
         <Route path='/my-appointments' element={<MyAppointments />}/>
         <Route path='/appointment/:tutId' element={<Appointment />}/>
+        <Route path='/appointment/TDD/places' element={<Appointment />}></Route>
+        <Route path='/appointment/TDD/places/:placeId' element={<Appointment />}></Route>
       </Routes>
       <ChatBot />
       <Footer />
