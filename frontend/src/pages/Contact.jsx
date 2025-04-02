@@ -25,7 +25,7 @@ const Contact = () => {
               <p className='font-semibold text-lg text-gray-600 '>Üyröt менен Чогуу Өнүк </p>
               <p className='text-gray-500'>Өзүңдүн билимиңди башкалар менен бөлүш.</p>
               <a 
-  href="http://localhost:5174/login" 
+  href={`${import.meta.env.VITE_ADMIN_URL}/login`}
   target="_blank" 
   rel="noopener noreferrer"
   className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500"

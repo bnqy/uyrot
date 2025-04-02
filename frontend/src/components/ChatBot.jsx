@@ -70,7 +70,7 @@ function ChatBot() {
 
     try {
       // Call backend to get AI reply
-      const response = await fetch("http://localhost:4000/api/chat", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userMessage: userMessage.text }),
