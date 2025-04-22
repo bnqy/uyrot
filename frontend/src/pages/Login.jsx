@@ -75,7 +75,7 @@ const Login = () => {
         {
           state === "Sign Up"
             ? <p>Сиздин аккаунтуңуз барбы? <span onClick={() => setState('Login')} className='text-primary underline cursor-pointer'>Кирүү</span> </p>
-            : <p>Жаңы колдонуучу түзүңүз?<span onClick={() => setState('Sign Up')} className='text-primary underline cursor-pointer'>басыңыз</span> </p>
+            : <p>Жаңы колдонуучу түзүңүз? <span onClick={() => setState('Sign Up')} className='text-primary underline cursor-pointer'>Басыңыз</span> </p>
         }
 
       </div>
